@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    /* return view('pages.home'); */
 });
 
-Route::get('/about', function () {
-    return view('pages.about');
+/* Route::get('/about', 'PagesController@home'); */
+
+/* Route::get('/', 'ReviewsController@index'); */
+
+Route::auth();
+
+Route::get('/', function() {
+    return view('home');
 });
