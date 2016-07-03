@@ -4,16 +4,21 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class ViewReviewsTest extends TestCase
 {
+    // A review page exists
+    // A review page has reviews
+
     /**
      * A basic functional test example.
      *
      * @return void
      */
-    public function testBasicExample()
+
+    /** @test */
+    public function a_review_page_exists()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->visit('/reviews')
+             ->see('All reviews');
     }
 }

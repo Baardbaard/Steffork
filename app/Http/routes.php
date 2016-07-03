@@ -21,6 +21,15 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/', function() {
-    return view('home');
-});
+/* Route::get('/', function() { */
+/*     return view('home'); */
+/* }); */
+
+Route::get('reviews', 'ReviewsController@index');
+Route::get('reviews/{review}', 'ReviewsController@show');
+Route::post('reviews', 'ReviewsController@store');
+
+/* Route::get('reviews/create', 'ReviewsController@create'); */
+/* Route::put('reviews/1', 'ReviewsController@update'); */
+/* Route::post('reviews/1/edit', 'ReviewsController@edit'); */
+/* Route::delete('reviews/1', 'ReviewsController@destroy'); */
