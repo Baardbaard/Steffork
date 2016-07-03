@@ -37,4 +37,19 @@ class ReviewsController extends Controller
 
         return back();
     }
+
+    public function edit(Request $request, Review $review)
+    {
+        return view('reviews.edit', compact('review'));
+    }
+
+    public function update(Request $request, Review $review)
+    {
+        $review->title = $request->title;
+        $review->rating = $request->rating;
+
+        $review->save();
+
+        return redirect()->route('reviews');
+    }
 }

@@ -9,12 +9,12 @@
             @foreach($reviews as $review)
                 <li class="list-group-item">
                     <a href="/reviews/{{ $review->id }}">{{ $review->title }}</a>
-                    <form method="POST" action="/reviews/delete/{{ $review->id }}" class="pull-right" style="margin-left: 1rem">
+                    <form method="POST" action="/reviews/{{ $review->id }}" class="pull-right" style="margin-left: 1rem">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button type="submit" style="padding: 0; border: 0; background-color: transparent"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     </form>
-                    <a href="/reviews/edit/{{ $review->id }}"><span class="glyphicon glyphicon-pencil pull-right" style="margin-left: 1rem" aria-hidden="true"></span></a>
+                    <a href="/reviews/{{ $review->id }}/edit"><span class="glyphicon glyphicon-pencil pull-right" style="margin-left: 1rem" aria-hidden="true"></span></a>
                     <span class="label label-default pull-right">{{ $review->rating }}</span>
                 </li>
             @endforeach
@@ -28,7 +28,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>Title</label>
-                    <input name="title" class="form-control"></input>
+                    <input name="title" class="form-control">
                 </div>
                 <div class="radio">
                     <label>
