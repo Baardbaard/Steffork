@@ -28,8 +28,7 @@ Route::auth();
 Route::get('reviews', 'ReviewsController@index');
 Route::get('reviews/{review}', 'ReviewsController@show');
 Route::post('reviews', 'ReviewsController@store');
+Route::delete('reviews/delete/{review}', 'ReviewsController@destroy');
+Route::put('reviews/edit/{review}', 'ReviewsController@update');
 
 /* Route::get('reviews/create', 'ReviewsController@create'); */
-/* Route::put('reviews/1', 'ReviewsController@update'); */
-/* Route::post('reviews/1/edit', 'ReviewsController@edit'); */
-/* Route::delete('reviews/1', 'ReviewsController@destroy'); */

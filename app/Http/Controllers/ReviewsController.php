@@ -21,12 +21,19 @@ class ReviewsController extends Controller
 
     public function store(Request $request, Review $review)
     {
-        $review = new Review;
-
-        $review->title = $request->title;
-        $review->rating = $request->rating;
+        $review = new Review([
+            'title' => $request->title,
+            'rating' => $request->rating
+        ]);
 
         $review->save();
+
+        return back();
+    }
+
+    public function destroy(Request $request, Review $review)
+    {
+        $review->delete();
 
         return back();
     }

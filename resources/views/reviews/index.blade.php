@@ -7,7 +7,16 @@
 
             <ul class="list-group">
             @foreach($reviews as $review)
-                <li class="list-group-item"><a href="/reviews/{{ $review->id }}">{{ $review->title }}</a><span class="label label-default pull-right">{{ $review->rating }}</span></li>
+                <li class="list-group-item">
+                    <a href="/reviews/{{ $review->id }}">{{ $review->title }}</a>
+                    <form method="POST" action="/reviews/delete/{{ $review->id }}" class="pull-right" style="margin-left: 1rem">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit" style="padding: 0; border: 0; background-color: transparent"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    </form>
+                    <a href="/reviews/edit/{{ $review->id }}"><span class="glyphicon glyphicon-pencil pull-right" style="margin-left: 1rem" aria-hidden="true"></span></a>
+                    <span class="label label-default pull-right">{{ $review->rating }}</span>
+                </li>
             @endforeach
             </ul>
 
