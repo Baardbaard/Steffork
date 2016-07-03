@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             // @todo: Review belongs to a user; unsigned has something to do
             // with foreign keys.
             /* $table->integer('user_id')->unsigned()->index(); */
-            $table->text('body');
+            $table->string('title');
             $table->boolean('rating');
             $table->timestamps();
         });

@@ -19,8 +19,15 @@ class ReviewsController extends Controller
         return view('reviews.show', compact('review'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Review $review)
     {
-        return $request->all();
+        $review = new Review;
+
+        $review->title = $request->title;
+        $review->rating = $request->rating;
+
+        $review->save();
+
+        return back();
     }
 }
