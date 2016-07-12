@@ -15,7 +15,11 @@
                         <button type="submit" style="padding: 0; border: 0; background-color: transparent"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     </form>
                     <a href="/reviews/{{ $review->id }}/edit"><span class="glyphicon glyphicon-pencil pull-right" style="margin-left: 1rem" aria-hidden="true"></span></a>
-                    <span class="label label-default pull-right">{{ $review->rating }}</span>
+                        @if ($review->rating == 0)
+                            <span class="label label-danger pull-right">Kut</span>
+                        @elseif ($review->rating == 1)
+                            <span class="label label-success pull-right">Niet kut</span>
+                        @endif
                 </li>
             @endforeach
             </ul>
