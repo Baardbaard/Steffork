@@ -23,32 +23,8 @@
                 </li>
             @endforeach
             </ul>
-
             <hr>
-
-            <h3>Add a review</h3>
-
-            <form method="POST" action="/reviews">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label>Title</label>
-                    <input name="title" class="form-control">
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="rating" value="0" checked>Kut
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="rating" value="1">Niet kut
-                    </label>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add review</button>
-                </div>
-            </form>
+            <a class="btn btn-primary" href="/reviews/create">Create a review</a>
         </div>
     </div>
 @stop

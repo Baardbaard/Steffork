@@ -28,7 +28,12 @@ class ReviewsController extends Controller
 
         $review->save();
 
-        return back();
+        return redirect()->route('reviews');
+    }
+
+    public function create()
+    {
+        return view('reviews.create');
     }
 
     public function destroy(Request $request, Review $review)
